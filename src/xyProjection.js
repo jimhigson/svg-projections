@@ -15,15 +15,15 @@ module.exports = function (xProjection, yProjection) {
       var yScale = yScaleAndTranslate.scale;
       var yTranslate = yScaleAndTranslate.translate;
 
-      return `translate(${xTranslate}, ${yTranslate}) scale(${xScale}, ${yScale})`
+      return 'translate(' + xTranslate + ', ' + yTranslate + ') scale(' + xScale + ', ' + yScale + ')';
     },
 
     pointTransformX: function(x){
-      return `translate(${xProjection.point(x)})`
+      return 'translate(' + xProjection.point(x) + ')';
     },
 
     pointTransformXY: function(x, y){
-      return `translate(${xProjection.point(x)}, ${yProjection.point(y)})`
+      return 'translate(' + xProjection.point(x) + ', ' + yProjection.point(y) + ')';
     },
 
     x: xProjection,
